@@ -6,6 +6,10 @@ import com.google.devtools.ksp.symbol.KSClassDeclaration
 import com.google.devtools.ksp.validate
 import com.soda1127.example.kspimplementation.InterfaceImplementation
 
+/**
+ * @author SODA1127
+ * KSP를 이용한 SymbolProcessor 구현체이다.
+ */
 class InterfaceImplementationProcessor : SymbolProcessor {
 
     private lateinit var codeGenerator: CodeGenerator
