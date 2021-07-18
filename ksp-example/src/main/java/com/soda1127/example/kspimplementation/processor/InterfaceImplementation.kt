@@ -1,3 +1,0 @@
-package com.soda1127.example.kspimplementation.processor
-
-annotation class InterfaceImplementation

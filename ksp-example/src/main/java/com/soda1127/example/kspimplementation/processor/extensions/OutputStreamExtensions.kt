@@ -2,13 +2,7 @@ package com.soda1127.example.kspimplementation.processor.extensions
 
 import java.io.OutputStream
 
-fun OutputStream.appendText(str: String) {
-    write(str.toByteArray())
-}
-
-fun OutputStream.toAppendable(): OutputStreamAdapter {
-    return OutputStreamAdapter(this)
-}
+fun OutputStream.toAppendable(): OutputStreamAdapter = OutputStreamAdapter(this)
 
 class OutputStreamAdapter(private val outputStream: OutputStream) : Appendable {
 
@@ -26,4 +20,5 @@ class OutputStreamAdapter(private val outputStream: OutputStream) : Appendable {
         outputStream.write(char.toInt())
         return this
     }
+
 }
