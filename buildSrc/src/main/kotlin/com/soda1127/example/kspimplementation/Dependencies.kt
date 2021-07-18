@@ -19,7 +19,6 @@ object Dependencies {
 
     object Kotlin {
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
-        const val reflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
         const val poet = "com.squareup:kotlinpoet:1.7.2"
     }
 
