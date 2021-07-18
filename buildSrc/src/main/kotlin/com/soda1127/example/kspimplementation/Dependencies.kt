@@ -11,9 +11,6 @@ object Dependencies {
     const val kotlinVersion = "1.5.20"
     const val kspVersion = "1.5.20-1.0.0-beta04"
 
-
-    private const val moshiVersion = "1.11.0"
-
     object ClassPath {
         const val androidGradle = "com.android.tools.build:gradle:$androidGradleVersion"
         const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
