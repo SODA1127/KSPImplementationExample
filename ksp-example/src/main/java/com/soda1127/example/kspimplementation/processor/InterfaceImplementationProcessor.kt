@@ -57,7 +57,7 @@ class InterfaceImplementationProcessor : SymbolProcessor {
     }
 }
 
-class AbstractionProcessorProvider : SymbolProcessorProvider {
+class InterfaceImplementationProvider : SymbolProcessorProvider {
 
     override fun create(environment: SymbolProcessorEnvironment): SymbolProcessor {
         return InterfaceImplementationProcessor().apply {
