@@ -34,16 +34,15 @@ class InterfaceImplementationProcessor : SymbolProcessor {
 
         val symbols = resolver.getSymbolsWithAnnotation(annotationName)
 
-        logger.warn("symbols : $symbols")
-
         val ret = symbols.filter { !it.validate() }
 
         symbols
-            .filter {
-                logger.warn("symbol : $it")
-                it is KSClassDeclaration && it.validate()
+            .filterIsInstance<KSClassDeclaration>()
+            .filter { it.validate() }
+            .forEach {
+                logger.warn("사용하는 클래스 : $it")
+                it.accept(InterfaceImplementationVisitor(codeGenerator, logger, annotationName, filteringKeywords), Unit)
             }
-            .forEach { it.accept(InterfaceImplementationVisitor(codeGenerator, logger, annotationName, filteringKeywords), Unit) }
 
         return ret.toList()
     }
